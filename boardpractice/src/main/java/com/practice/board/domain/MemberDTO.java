@@ -20,4 +20,6 @@ public class MemberDTO {
     @NotBlank
     @Pattern(regexp = "[a-zA-Z가-힣]{1,40}", message = "영문과 한글만 입력 가능합니다.")
     private String uname;
+
+    private String uuid;
 }

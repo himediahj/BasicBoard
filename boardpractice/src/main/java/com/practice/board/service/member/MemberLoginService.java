@@ -13,4 +13,8 @@ public class MemberLoginService {
     public MemberDTO login(String uid, String pw){
         return memberMapper.selectByIdPw(uid, pw);
     }
+
+    public int insertUUID(String uuid, int idx){
+        return memberMapper.updateUUID(uuid, idx);
+    }
 }

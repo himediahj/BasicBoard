@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <title>Title</title>
@@ -21,12 +22,19 @@
       <h4 class="mb-3">로그인</h4>
       <div class="col-sm-12">
         <label for="uid">아이디</label>
-        <input type="text" class="form-control" id="uid" name="uid">
+        <input type="text" class="form-control" id="uid" name="uid" value="${cookie.reId.value}">
+      </div><br>
+      <div>
+        아이디 저장하기 <input type="checkbox" name="idremember" ${cookie.reId.value ne null? 'checked':''}>
       </div>
       <br>
       <div class="col-sm-12">
         <label for="pw">비밀번호</label>
         <input type="password" class="form-control" id="pw" name="pw">
+      </div>
+      <br>
+      <div>
+        로그인 상태 유지하기 <input type="checkbox" name="rememberme">
       </div>
       <br>
 
@@ -37,5 +45,6 @@
     <br>
   </form>
 </main>
+
 </body>
 </html>
