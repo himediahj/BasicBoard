@@ -34,7 +34,7 @@
             <textarea name="content" rows="10" cols="60">${board.content}</textarea></div>
 
      <div class="my-3 p-3 bg-white rounded box-shadow">      <label>Writer</label>
-    <input type="text" name="writer" value="${board.writer}" readonly></div>
+    <input type="text" name="writer" value="${board.writer}"></div>
 <div class="my-3 p-3 bg-white rounded box-shadow">
     <input type="submit" value="수정">
 <button type="button" onclick="location.href='/board/read?bno=${param.bno}'">취소</button></div>

@@ -34,6 +34,16 @@ public class ReplyController {
         return new ResponseEntity<>(replyListService.selectAll(), httpHeaders, HttpStatus.OK);
     }
 
+    /*@GetMapping(value = "/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ReplyDTO>> selectBy(@PathVariable("bno") int bno){
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.set("content-Type", "application/json");
+
+        return new ResponseEntity<>(replyListService.selectByBno(bno), httpHeaders, HttpStatus.OK);
+    }*/
+
+
+
     @PostMapping
     public ResponseEntity<String> create(@RequestBody ReplyDTO replyDTO){
         replyInsertService.register(replyDTO);

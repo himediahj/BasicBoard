@@ -41,7 +41,7 @@
   <div class="my-3">
     <button type="button" class="btn btn-outline-secondary" onclick="location.href='/board/list'">목록</button>
     <button type="button" class="btn btn-outline-primary" onclick="location.href='/board/modify?bno=${param.bno}'">수정</button>
-      <button type="button" class="btn btn-outline-danger" onclick="location.href='/board/remove?bno=${param.bno}'">삭제</button>
+      <button type="button" class="btn btn-outline-danger" onclick="deleteBoard(${param.bno})">삭제</button>
   </div>
 </div>
   </div>
@@ -51,9 +51,9 @@
 <div class="my-3">
 <label>내용</label>
   <textarea id="reply" placeholder="댓글을 입력하세요." rows="1" cols="60"></textarea>
-
+  &nbsp&nbsp&nbsp&nbsp&nbsp   <%--nonbreakingspace--%>
 <label>작성자</label>
-  <input type="text" id="replyer" placeholder="댓글 작성자 이름">
+  <input type="text" id="replyer" placeholder="댓글 작성자 이름">&nbsp
   <input type="submit" value="등록" id="btn_reply">
 </div>
 <div>
@@ -64,7 +64,13 @@
 
   </div>
 </main>
-
+<script>
+  function deleteBoard(bno){
+    if(confirm("삭제하시겠습니까?")){
+      location.href='/board/remove?bno='+bno;
+    }
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
   let replyList;
@@ -95,7 +101,7 @@
 
                 const newTR = document.createElement('tr')
                 let str=''
-                str += '<td>'+newReply.replyer+'</td>'
+                str += '<td class="col-2">'+newReply.replyer+'</td>'
                 str += '<td>'+newReply.reply+'</td>'
                 str += '<td>'+newReply.replyDate+'</td>'
                 newTR.innerHTML = str
@@ -109,11 +115,13 @@
     })
   })
 
+  let i = 1
   function addReplyRow(list){
     console.log(list)
     list.forEach((reply, index) => {
       const newTR = document.createElement('tr')
-      let str = '<td>'+reply.rno+'</td>'
+      let str = '<td>'+ i++ +'</td>'
+      /*let str = '<td>'+reply.rno+'</td>'*/
       str += '<td>'+reply.reply+'</td>'
       str += '<td class="col-2">'+reply.replyer+'</td>'
       str += '<td class="col-2">'+reply.replyDate+'</td>'
@@ -122,6 +130,7 @@
       newTR.setAttribute('class', 'fs-6 text-center')
       newTR.setAttribute('tr-index', reply.rno)
       replyList.appendChild(newTR)
+
     })
   }
 

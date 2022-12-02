@@ -8,6 +8,6 @@
     </insert>
 
     <update id="updateBoard" parameterType="com.practice.board.domain.BoardDTO">
-        update tbl_board set title=#{title}, content=#{content}, updatedate=CURDATE() where bno=#{bno]
+        update tbl_board set title=#{title}, content=#{content}, writer=#{writer}, updatedate=CURDATE() where bno=#{bno}
     </update>
 </mapper>

@@ -15,4 +15,6 @@ public class ReplyListService {
     public List<ReplyDTO> selectAll(){
         return replyMapper.selectAll();
     }
+
+    public List<ReplyDTO> selectByBno(int bno){return replyMapper.selectByBno(bno);}
 }

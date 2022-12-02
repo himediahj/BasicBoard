@@ -12,6 +12,8 @@ import java.util.List;
 public interface ReplyMapper {
     @Select("select * from tbl_reply")
     List<ReplyDTO> selectAll();
+    @Select("select * from tbl_reply where bno=#{bno}")
+    List<ReplyDTO> selectByBno(int bno);
 
     @Insert("insert into tbl_reply (bno, reply, replyer) values (#{bno}, #{reply}, #{replyer})")
     int insertReply(ReplyDTO replyDTO);

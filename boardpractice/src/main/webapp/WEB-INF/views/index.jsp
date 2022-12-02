@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
+<a href="/board/list">게시판 바로가기</a>
 </body>
 </html>
