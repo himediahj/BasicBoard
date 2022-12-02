@@ -1,6 +1,7 @@
 package com.practice.board.mapper;
 
 import com.practice.board.domain.BoardDTO;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -17,4 +18,16 @@ public interface BoardMapper {
 
     @Select("select count(*) from tbl_board")
     int selectTotalCount();
+
+    @Select("select * from tbl_board where bno=#{bno}")
+    BoardDTO selectByBno(int bno);
+
+    int insertBoard(BoardDTO boardDTO);
+
+    int updateBoard(BoardDTO boardDTO);
+
+    @Delete("delete from tbl_board where bno=#{bno}")
+    int deleteBoard(int bno);
+
+
 }

@@ -10,17 +10,28 @@
 <html>
 <head>
     <title>Title</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this template -->
+  <link href="/css/bootstrap/offcanvas.css" rel="stylesheet">
 </head>
-<body>
-<table>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0">Board List</a>
+</nav>
+<main role="main" class="container">
+  <div class="my-3 p-3" style="float: right"><button type="button" class="btn btn-primary" onclick="location.href='/board/register'">게시물 등록</button> </div>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
-    <th>#번호</th>
+    <th>번호</th>
     <th>제목</th>
     <th>작성자</th>
     <th>작성일</th>
     <th>수정일</th>
   </tr>
+  </thead>
   <c:forEach var="board" items="${page.list}" varStatus="status">
     <tr>
       <th>${(page.totalCountOfArticle - (page.pageNum-1)*10) - status.index}</th>
@@ -38,5 +49,6 @@
     <li><a class="page-link" href="?pageNum=${num}">${num}</a></li>
   </c:forEach>
 </ul>
+</main>
 </body>
 </html>

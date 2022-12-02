@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-</beans>
+<mapper namespace="com.practice.board.mapper.BoardMapper">
+    <insert id="insertBoard" parameterType="com.practice.board.domain.BoardDTO">
+        insert into tbl_board (title, content, writer) values (#{title}, #{content}, #{writer})
+    </insert>
+
+    <update id="updateBoard" parameterType="com.practice.board.domain.BoardDTO">
+        update tbl_board set title=#{title}, content=#{content}, updatedate=CURDATE() where bno=#{bno]
+    </update>
+</mapper>
