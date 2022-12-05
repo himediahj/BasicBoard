@@ -14,7 +14,7 @@ public class IDCheckController {
 
     @PostMapping("/member/idCheck")
     @ResponseBody
-    public int idCheck(@RequestParam(value = "uid", required = false) String uid){
+    public int idCheck(@RequestParam("uid") String uid){
         int cnt = memberLoginService.idCheck(uid);
         return cnt;
     }
