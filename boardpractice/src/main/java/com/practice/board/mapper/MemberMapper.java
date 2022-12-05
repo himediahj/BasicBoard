@@ -16,4 +16,7 @@ public interface MemberMapper {
 
     @Select("select * from tbl_member where uuid=#{uuid}")
     MemberDTO selectByUUID(@Param("uuid") String uuid);
+
+    @Select("select count(uid) from tbl_member where uid=#{uid}")
+    int idCheck(String uid);
 }
