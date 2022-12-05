@@ -111,6 +111,7 @@
 
                 document.querySelector("#reply").value=''
                 document.querySelector("#replyer").value=''
+                window.location.reload()  // 등록하고 새로고침 되게끔
               }).catch(err => console.log(err))
     })
   })
