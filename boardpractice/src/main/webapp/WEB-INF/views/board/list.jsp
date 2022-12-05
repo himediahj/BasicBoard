@@ -36,7 +36,7 @@
   <c:forEach var="board" items="${page.list}" varStatus="status">
     <tr>
       <th>${(page.totalCountOfArticle - (page.pageNum-1)*10) - status.index}</th>
-      <td><a href="/board/read?bno=${board.bno}">${board.title}</a></td>
+      <td><a href="/board/read?pageNum=${param.pageNum}&bno=${board.bno}">${board.title}</a></td>
       <td>${board.writer}</td>
       <td>${board.regdate}</td>
       <td>${board.updatedate}</td>

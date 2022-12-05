@@ -20,7 +20,7 @@
     <div class="card-body">
         <h5 class="card-title">게시판 보기</h5>
         <p class="card-text">로그인 회원만 볼 수 있습니다.</p>
-        <a href="/board/list" class="btn btn-primary">Go</a>
+        <a href="/board/list?pageNum=1" class="btn btn-primary">Go</a>
     </div>
 
     <div class="card-body">

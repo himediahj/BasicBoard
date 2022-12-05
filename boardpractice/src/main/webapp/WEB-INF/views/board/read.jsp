@@ -39,7 +39,7 @@
     <textarea name="content" rows="10" cols="60" readonly>${board.content}</textarea>
   </div >
   <div class="my-3">
-    <button type="button" class="btn btn-outline-secondary" onclick="location.href='/board/list'">목록</button>
+    <button type="button" class="btn btn-outline-secondary" onclick="location.href='/board/list?pageNum=${param.pageNum}'">목록</button>
     <button type="button" class="btn btn-outline-primary" onclick="location.href='/board/modify?bno=${param.bno}'">수정</button>
       <button type="button" class="btn btn-outline-danger" onclick="deleteBoard(${param.bno})">삭제</button>
   </div>
