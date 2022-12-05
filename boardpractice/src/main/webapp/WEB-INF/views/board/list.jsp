@@ -47,7 +47,7 @@
 <!-- 페이지 처리 -->
 <ul class="pagination"> <!-- 부트스트랩 기능 -->
   <c:forEach var="num" begin="1" end="${page.totalCountOfPage}">
-    <li><a class="page-link" href="?pageNum=${num}">${num}</a></li> <!-- page-link하니까 네모상자 생김 -->
+    <li class="page-item ${num eq page.pageNum? 'active':''}"><a class="page-link" href="?pageNum=${num}">${num}</a></li> <!-- page-link하니까 네모상자 생김 -->
   </c:forEach>
 </ul>
 </main>
