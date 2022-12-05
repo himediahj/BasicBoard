@@ -24,7 +24,12 @@ https://www.springframework.org/schema/context/spring-context.xsd">
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/board/**"/>
+            <bean class="com.practice.board.interceptor.AuthenticationInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/board/**"/>
             <bean class="com.practice.board.interceptor.AuthCheckInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
 </beans>

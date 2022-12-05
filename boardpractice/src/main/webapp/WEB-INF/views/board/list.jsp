@@ -20,7 +20,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <a class="navbar-brand mr-auto mr-lg-0" href="/index">Board List</a>
 </nav><br>
-&nbsp;&nbsp;&nbsp;[${loginInfo}]님이 접속 중입니다.
+&nbsp;&nbsp;&nbsp;[${loginInfo}]님이 접속 중입니다.&nbsp; >> <a href="/logout">로그아웃</a>
 <main role="main" class="container">
 <div class="my-3 p-3" style="float: right"><button type="button" class="btn btn-primary" onclick="location.href='/board/register'">게시물 등록</button> </div>
 <table class="table table-striped">

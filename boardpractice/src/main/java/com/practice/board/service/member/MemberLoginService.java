@@ -17,4 +17,8 @@ public class MemberLoginService {
     public int insertUUID(String uuid, int idx){
         return memberMapper.updateUUID(uuid, idx);
     }
+
+    public MemberDTO autoLogin(String uuid){
+        return memberMapper.selectByUUID(uuid);
+    }
 }

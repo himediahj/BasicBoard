@@ -13,4 +13,7 @@ public interface MemberMapper {
 
     @Update("update tbl_member set uuid=#{uuid} where idx=#{idx}")
     int updateUUID(@Param("uuid") String uuid, @Param("idx") int idx);
+
+    @Select("select * from tbl_member where uuid=#{uuid}")
+    MemberDTO selectByUUID(@Param("uuid") String uuid);
 }
